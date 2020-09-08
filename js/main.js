@@ -10,7 +10,6 @@
 'use strict';
 
 (function ($) {
-
     /*------------------
         Preloader
     --------------------*/
@@ -117,5 +116,17 @@
 	$("#countdown").countdown(timerdate, function(event) {
         $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Hari</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Jam</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Menit</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Detik</p> </div>"));
     });
+
+    if (new Date() >= new Date(2020, 8, 11, 7, 30, 0)) {
+        $("#tab1").removeClass("active");
+        $("#tab-content1").removeClass("active");
+        $("#tab2").addClass("active");
+        $("#tab-content2").addClass("active");
+    } else {
+        $("#tab1").addClass("active");
+        $("#tab-content1").addClass("active");
+        $("#tab2").removeClass("active");
+        $("#tab-content2").removeClass("active");
+    }
 
 })(jQuery);
